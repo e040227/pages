@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Language" content="ja">
+  <meta name="google" content="notranslate">
+  <title>OGSC API Call Tool</title>
+</head>
+<script>
+  const ogsctest = new XMLHttpRequest();
+
+  function toConsentScreen() {
+    console.log('test');
+
+    ogsctest.open('GET', 'https://data1-test-tk-sp.omronconnect.mobi/app/consent/219dcce88a02/66b02996/');
+    ogsctest.setRequestHeader('Authorization', 'Bearer eyJraWQiOiJRZUpXT3pGbUdLcFNZWTQ3SUNxemlqQldlYVo3XC9zelgxamFBSEU5VENzWT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1YWYxZmU5ZC1kYWQyLTQyMDMtYTVmOC0xYmQzNmRmMTBlM2MiLCJjb2duaXRvOmdyb3VwcyI6WyJST0xFX1VTRVIiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb21cL2FwLW5vcnRoZWFzdC0xX0UyRHVsTVd0ViIsImNsaWVudF9pZCI6IjUxZG5hODRxMDFwOTc4aWRjZ2tqMjFhNnZzIiwib3JpZ2luX2p0aSI6ImY5NzcwNWZjLTBmMDUtNGM5Ny1iZmEzLTRhMDUxNmUzYTVjMSIsImV2ZW50X2lkIjoiM2IxMzkzYjUtY2I4Zi00ZjQwLWJjZGEtYzZmMjViYjMwODgxIiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTcwOTU5OTQzMCwiZXhwIjoxNzA5NjAzMDMwLCJpYXQiOjE3MDk1OTk0MzAsImp0aSI6ImEyZDM1YzE2LTNjZmUtNDJiMy05YjQ5LTdiNWU3ZDg1MWUzNiIsInVzZXJuYW1lIjoiNGUzYzkyMTMtN2ZkMi00Y2U3LTkyZjgtZGU5ZmQ5YmMxODZmIn0.fhZMPL3ypW5I2EjvDenb-6Tyebyrr5deoQQyYFZjPFHChq57jPbtzDtQa3Fo_CgciPF5SI3ux4wvrFV0S1fI6cG4coNt452GNMduRXPRgN4RNAUSo8ZhBkheabQGiyTBD-NYp2nS3VxyCvixrPHhvXtJHi3pEDw9SKC8cdOYcd0PXjrIyMpw5Xifspp_6EsIIFD2DrgdZPTE29OeHpA6g4ygUpsdCdKEjNViroQRynVBhxwFMYZemlooflEfGb84mBgBEkVLPE9ztvSg9zFawrTpySnMWi5HqZMl5HMfc43mg79ixMydi8Qv_wH6EHuAq2abqCt5zHRgEhj6JQPf_w');
+    ogsctest.send();
+
+    ogsctest.onreadystatechange = function () {
+      if (ogsctest.readyState === 4 && ogsctest.status === 200) {
+        console.log(ogsctest.responseText);
+      }
+    }
+  }
+</script>
+
+<body>
+  <button onclick="toConsentScreen()">Login</button>
+</body>
+
+</html>
